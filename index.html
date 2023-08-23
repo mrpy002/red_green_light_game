@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Color_changer_Ranit.gihub.io</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: red;
+        transition: background-color 0.5s;
+      }
+
+      #message {
+        font-size: 24px;
+        color: white;
+        margin-top: 20px;
+      }
+
+      #customText {
+        font-size: 200px;
+        color: rgb(253, 248, 248);
+        margin-top: 20px;
+        transition: color 0.5s, font-size 0.1s;
+      }
+    </style>
+    <title>Customizable Color, Text, and Style Changing Page</title>
+  </head>
+  <body>
+    <div id="customText">SHOOT</div>
+    <audio id="audio" loop>
+      <source src="squid_game_music.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+      const body = document.body;
+      const message = document.getElementById("message");
+      const customText = document.getElementById("customText");
+      const audio = document.getElementById("audio");
+
+      body.addEventListener("click", () => {
+        if (body.style.backgroundColor === "red") {
+          body.style.backgroundColor = "green";
+          customText.textContent = "GO";
+          customText.style.color = "white";
+          customText.style.fontSize = "200px";
+          audio.play(); // Start playing the audio
+        } else {
+          body.style.backgroundColor = "red";
+          customText.textContent = "SHOOT";
+          customText.style.color = "white";
+          customText.style.fontSize = "200px";
+          audio.pause(); // Pause the audio
+        }
+      });
+    </script>
+  </body>
+</html>
